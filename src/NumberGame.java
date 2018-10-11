@@ -1,3 +1,5 @@
+package GuessingGame;
+
 /**
  * The base class for all number games.
  * Your guessing game should extend this class and
