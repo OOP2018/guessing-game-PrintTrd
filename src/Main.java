@@ -1,4 +1,4 @@
-package GuessingGame;
+package guessing;
 
 /**
  * A main class for the GuessingGame.
@@ -11,9 +11,13 @@ public class Main{
 		int upperBound = 100;
 		NumberGame game = new ThiradaGame(upperBound);
                 
-		GameConsole ui = new GameConsole( );
-		int solution = ui.play( game );
+//		GameConsole ui = new GameConsole( );
+//		int solution = ui.play( game );
 		//TODO display the answer returned by play
-
+                GameSolver sv = new GameSolver();
+                sv.play(game);
+//                GameDialog gd = new GameDialog();
+//                gd.play(game);
+//                System.out.println("You guessing "+ game.getCount() + " times.");
 	}
 }

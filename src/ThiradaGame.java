@@ -1,4 +1,4 @@
-package GuessingGame;
+package guessing;
 import java.util.Random; 
 /**
  *Game of guessing a secret number.
@@ -7,10 +7,13 @@ import java.util.Random;
 public class ThiradaGame extends NumberGame{
     private int upperBound;
     private int secret;
-    public ThiradaGame(){
-        this(100);
-    }
+    private int counter;
+    /**
+     *To count the number of guessing time
+     */
+
     public ThiradaGame(int upperBound) {
+        this.upperBound = upperBound;
 	long seed = System.nanoTime(); 
 	Random rand = new Random(seed);
         secret = 1 + rand.nextInt(100);
@@ -19,18 +22,19 @@ public class ThiradaGame extends NumberGame{
     
     @Override
     public boolean guess(int number){
+        counter++;
         if (number == secret) {
-            setMessage("Right! The secret number is "+secret+".");
+            setMessage("Right! The secret number is "+secret+".\n");
             return true;
     	}
         else{
-    	if (number < secret) {
-            setMessage("Sorry, too small.\n");
-    	}
-        else if (number > secret) {
-            setMessage("Sorry, too large.\n");
-    	}
-    	return false;
+            if (number < secret) {
+                setMessage("Sorry, too small.");
+            }
+            else if (number > secret) {
+                setMessage("Sorry, too large.");
+            }
+            return false;
         }
     }
     @Override
@@ -42,5 +46,7 @@ public class ThiradaGame extends NumberGame{
     public String toString() {
     	return "I'm thinking of a number between 1 and 100.";
     }
-
+    public int getCount(){
+        return counter;
+    }
 }

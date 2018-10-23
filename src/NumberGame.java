@@ -1,4 +1,4 @@
-package GuessingGame;
+package guessing;
 
 /**
  * The base class for all number games.
@@ -63,5 +63,19 @@ public class NumberGame {
 	@Override
     public String toString() {
 		return "You should override this method for your game";
+    }
+    public int getCount(){
+        return 0;
+    }
+    public int getSecret(){
+            return 0;
+    }
+
+    void guess(String reply) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void getMessage(String reply) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
